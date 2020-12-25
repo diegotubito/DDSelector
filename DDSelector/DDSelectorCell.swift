@@ -28,7 +28,8 @@ public class DDSelectorCell: UITableViewCell {
     }
     
     static var nib: UINib {
-        return UINib(nibName: identifier, bundle: nil)
+        let bundle = Bundle(for: self.classForCoder())
+        return UINib(nibName: identifier, bundle: bundle)
     }
     
 }
