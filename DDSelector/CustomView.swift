@@ -9,14 +9,19 @@ import Foundation
 import UIKit
 
 public struct DDSelectorParameters {
-    var isBlurred : Bool
-    var bouncing : Bool
+    public var isBlurred : Bool
+    public var bouncing : Bool
+    
+    public init(isBlurred: Bool, bouncing: Bool) {
+        self.isBlurred = isBlurred
+        self.bouncing = bouncing
+    }
 }
 
 public class DDSelectorView: UIView {
-    var parameters : DDSelectorParameters!
-    var selectedItem : Int?
-    var itemList = [String]()
+    public var parameters : DDSelectorParameters!
+    public var selectedItem : Int?
+    public var itemList = [String]()
     
     private var blurEffectView : UIVisualEffectView!
     
@@ -36,7 +41,7 @@ public class DDSelectorView: UIView {
     
     private var tableView : UITableView!
     
-    var onSelectedItem: ((Int?)->Void)?
+    public var onSelectedItem: ((Int?)->Void)?
     
     private var selectedIndex : Int? {
         didSet {
@@ -57,7 +62,7 @@ public class DDSelectorView: UIView {
         defaultParameters()
     }
     
-    required init(frame: CGRect, parameters: DDSelectorParameters? = nil) {
+    required public init(frame: CGRect, parameters: DDSelectorParameters? = nil) {
         super.init(frame: frame)
         
         if parameters != nil {
@@ -308,5 +313,4 @@ extension DDSelectorView {
     
     
 }
-
 
