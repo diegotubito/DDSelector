@@ -10,8 +10,8 @@ Pod::Spec.new do |spec|
   spec.author       = { "David Diego Gómez" => "diegodavid@icloud.com" }
   spec.platform     = :ios, "11"
   spec.source       = { :git => "https://github.com/diegotubito/DDSelector.git", :tag => "0.0.2" }
-  spec.source_files  = "DDSelector", "Classes/**/*.{h,m,xib}"
-  spec.resources = ['*.{xib}']
+  spec.source_files  = "DDSelector", "Classes/**/*.{h,m,xib}, "DDSelector/*.{xib}"
+  spec.resources = ['DDSelector/*.{xib}']
   spec.swift_version = "5.0"
   spec.license      = 'Apache 2.0'
 end
